@@ -1,6 +1,6 @@
 # HiMaLAYAS Publication Makefile
 
-.PHONY: help format lint test build publish clean
+.PHONY: format clean help
 
 format: ## Format Python files using Black
 	black --line-length=100 .
