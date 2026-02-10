@@ -15,8 +15,10 @@ The publication workflows include both biological and non-biological application
 
 For a full description of HiMaLAYAS and its applications, see:
 <br>
-**Horecka, I. and Rost, H. (unpublished)**.
-_HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices_.
+Horecka, I., and Röst, H. (unpublished)
+<br>
+_HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices_
+<br>
 Manuscript in preparation.
 
 ## Documentation and Tutorial
@@ -110,7 +112,7 @@ Open the notebook you want to run (`fig_1.ipynb`, `supp_fig_1.ipynb`, or `supp_f
 
 ### Manuscript (unpublished)
 
-Horecka, I., and Röst, H. (2026)
+Horecka, I., and Röst, H. (unpublished)
 <br>
 _HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices_
 <br>
