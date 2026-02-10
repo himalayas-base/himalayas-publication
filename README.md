@@ -15,11 +15,13 @@ The publication workflows include both biological and non-biological application
 
 For a full description of HiMaLAYAS and its applications, see:
 <br>
-Horecka, I., and Röst, H. (unpublished)
+Horecka, I., and Röst, H. (2026)
 <br>
 _HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices_
 <br>
-Manuscript in preparation.
+_bioRxiv_. https://doi.org/10.1101/2026.xx.xx.xxxxxx
+<br>
+Under review at _Bioinformatics_.
 
 ## Documentation and Tutorial
 
@@ -110,17 +112,21 @@ Open the notebook you want to run (`fig_1.ipynb`, `supp_fig_1.ipynb`, or `supp_f
 
 ## Citation
 
-### Manuscript (unpublished)
+### Primary citation
 
-Horecka, I., and Röst, H. (unpublished)
+Horecka, I., and Röst, H. (2026)
 <br>
 _HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices_
 <br>
-Manuscript in preparation.
+_bioRxiv_. https://doi.org/10.1101/2026.xx.xx.xxxxxx
+<br>
+Under review at _Bioinformatics_.
 
-### Zenodo
+### Software archive
 
-No Zenodo archive is available yet.
+HiMaLAYAS software for the manuscript.
+<br>
+Zenodo. https://doi.org/10.5281/zenodo.xxxxxxxx
 
 ## License
 
