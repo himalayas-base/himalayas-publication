@@ -42,7 +42,6 @@ data and figure exports.
 - `data/yeast/gi_pcc_sampled.tsv`: sampled yeast GI profile similarity matrix (1053 x 1053)
 - `data/yeast/gi_score_sampled.tsv`: sampled yeast GI score matrix (1142 x 1142)
 - `data/yeast/yeast_essential_orfs.txt`: essential ORF labels used for row annotations
-- `data/yeast/yeast_uncharacterized_orfs.json`: uncharacterized ORF metadata used in exploratory labeling
 - `data/interdisciplinary/WorldWideDishes_2024_June.xlsx`: interdisciplinary recipe dataset used in Supplementary Figure S2
 
 ## Installation
