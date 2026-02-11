@@ -79,7 +79,7 @@ source himalayas-env/bin/activate
 
 ```bash
 python -m pip install --upgrade pip
-pip install "himalayas==0.0.4" jupyter numpy pandas scipy matplotlib openpyxl
+pip install "himalayas==0.0.7" jupyter numpy pandas scipy matplotlib openpyxl
 ```
 
 ### Step 4: Launch Jupyter
