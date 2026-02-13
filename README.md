@@ -2,7 +2,6 @@
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-yellow)
 [![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)](LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18610373.svg)](https://doi.org/10.5281/zenodo.18610373)
 
 > [!CAUTION]
 > This repository is designed to work with `himalayas==0.0.8`. To ensure compatibility with these notebooks, please run:
