@@ -5,10 +5,10 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18610373.svg)](https://doi.org/10.5281/zenodo.18610373)
 
 > [!CAUTION]
-> This repository is designed to work with `himalayas==0.0.7`. To ensure compatibility with these notebooks, please run:
+> This repository is designed to work with `himalayas==0.0.8`. To ensure compatibility with these notebooks, please run:
 >
 > ```bash
-> pip install himalayas==0.0.7
+> pip install himalayas==0.0.8
 > ```
 
 This repository contains publication datasets and workflows presented in **HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices**. HiMaLAYAS is a general framework that treats dendrogram-defined clusters as statistical units, evaluates annotation enrichment, and maps significant terms onto matrix regions.
@@ -80,7 +80,7 @@ source himalayas-env/bin/activate
 
 ```bash
 python -m pip install --upgrade pip
-pip install "himalayas==0.0.7" jupyter numpy pandas scipy matplotlib openpyxl
+pip install "himalayas==0.0.8" jupyter numpy pandas scipy matplotlib openpyxl
 ```
 
 ### Step 4: Launch Jupyter
