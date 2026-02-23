@@ -21,7 +21,7 @@ _HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices_
 <br>
 _bioRxiv_. https://doi.org/10.64898/2026.02.11.705303
 <br>
-Submitted to _Bioinformatics_.
+Submitted to _Bioinformatics Advances_.
 
 ## Documentation and Tutorial
 
@@ -120,7 +120,7 @@ _HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices_
 <br>
 _bioRxiv_. https://doi.org/10.64898/2026.02.11.705303
 <br>
-Submitted to _Bioinformatics_.
+Submitted to _Bioinformatics Advances_.
 
 ### Software archive
 
