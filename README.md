@@ -4,10 +4,10 @@
 [![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)](LICENSE)
 
 > [!CAUTION]
-> This repository is designed to work with `himalayas==0.0.8`. To ensure compatibility with these notebooks, please run:
+> This repository is designed to work with `himalayas==0.0.15`. To ensure compatibility with these notebooks, please run:
 >
 > ```bash
-> pip install himalayas==0.0.8
+> pip install himalayas==0.0.15
 > ```
 
 This repository contains publication datasets and workflows presented in **HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices**. HiMaLAYAS is a general framework that treats dendrogram-defined clusters as statistical units, evaluates annotation enrichment, and maps significant terms onto matrix regions.
@@ -79,7 +79,7 @@ source himalayas-env/bin/activate
 
 ```bash
 python -m pip install --upgrade pip
-pip install "himalayas==0.0.8" jupyter numpy pandas scipy matplotlib openpyxl
+pip install "himalayas==0.0.15" jupyter numpy pandas scipy matplotlib openpyxl
 ```
 
 ### Step 4: Launch Jupyter
