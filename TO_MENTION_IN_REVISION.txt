@@ -1,8 +1,0 @@
-1.
-=====================================
-During revision we corrected the enrichment implementation so that annotation
-set sizes are computed relative to the same background universe used in the
-hypergeometric test. This adjustment slightly changed some enrichment p-values
-but did not alter the dominant annotations or biological interpretation. Figures
-and tables were updated accordingly.
-
