@@ -10,14 +10,14 @@
 > pip install himalayas==0.0.15
 > ```
 
-This repository contains publication datasets and workflows presented in **HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices**. HiMaLAYAS is a general framework that treats dendrogram-defined clusters as statistical units, evaluates annotation enrichment, and maps significant terms onto matrix regions.
-The publication workflows include both biological and non-biological applications.
+This repository contains publication datasets and workflows presented in **HiMaLAYAS: enrichment-based annotation and visualization of hierarchically clustered matrices**. HiMaLAYAS treats dendrogram-defined clusters as statistical units, tests categorical annotations for enrichment, controls multiple testing, and renders significant annotations alongside clusters.
+The publication workflows include the yeast genetic interaction profile similarity matrix application, robustness and null analyses, related-tool comparison, and a non-biological country-sector input-output matrix example.
 
 For a full description of HiMaLAYAS and its applications, see:
 <br>
 Horecka, I., and Röst, H. (2026)
 <br>
-_HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices_
+_HiMaLAYAS: enrichment-based annotation and visualization of hierarchically clustered matrices_
 <br>
 _bioRxiv_. [https://www.biorxiv.org/content/10.64898/2026.02.11.705303v2](https://www.biorxiv.org/content/10.64898/2026.02.11.705303v2)
 <br>
@@ -31,22 +31,31 @@ Submitted to _Bioinformatics Advances_.
 
 ## Repository Structure
 
-This repository is organized around three publication notebooks and their supporting
+This repository is organized around six publication notebooks and their supporting
 data and figure exports.
 
 ### Notebooks
 
-- `fig_1.ipynb`: Figure 1 workflow for a yeast GI profile similarity matrix (`data/yeast/gi_pcc_sampled.tsv`)
-- `supp_fig_1.ipynb`: Supplementary Figure S1 workflow for a yeast GI score matrix (`data/yeast/gi_score_sampled.tsv`) with zoomed cluster panels
-- `supp_fig_2.ipynb`: Supplementary Figure S2 workflow for a world recipe matrix (`data/interdisciplinary/WorldWideDishes_2024_June.xlsx`)
+- `fig_1.ipynb`: Figure 1 - HiMaLAYAS workflow and yeast genetic interaction profile similarity matrix application (`data/yeast/gi_pcc_sampled.tsv`)
+- `fig_2.ipynb`: Figure 2 - robustness and null analysis of GO Biological Process annotations in the yeast genetic interaction profile similarity matrix (`data/yeast/gi_pcc_sampled.tsv`)
+- `supp_fig_1.ipynb`: Supplementary Figure S1 - annotated matrix and condensed hierarchy views of the full yeast matrix and cluster 3 zoom, with post hoc row data tracks for essentiality and single-mutant fitness (`data/yeast/gi_pcc_sampled.tsv`)
+- `supp_fig_2.ipynb`: Supplementary Figure S2 - matrix-perturbation robustness of seven headline GO Biological Process annotations in the yeast genetic interaction profile similarity matrix (`data/yeast/gi_pcc_sampled.tsv`)
+- `supp_fig_3.ipynb`: Supplementary Figure S3 - related-tool capability comparison from a curated capability table; no external dataset and no competing tool is run
+- `supp_fig_4.ipynb`: Supplementary Figure S4 - WIOD non-biological country-sector input-output matrix portability example (downloaded at runtime)
 
 ### Data
 
 - `data/yeast/go_bp_name_to_orfs.json`: GO BP term-to-ORF mapping (1,095 terms)
-- `data/yeast/gi_pcc_sampled.tsv`: sampled yeast GI profile similarity matrix (1053 x 1053)
+- `data/yeast/gi_pcc_sampled.tsv`: sampled yeast genetic interaction profile similarity matrix (1053 x 1053)
+- `data/yeast/yeast_essential_orfs.txt`: essential ORF labels used for the Supplementary Figure S1 row rail
+- `data/yeast/strain_ids_and_single_mutant_fitness.csv`: Costanzo et al. (2016) single-mutant fitness used for the Supplementary Figure S1 row rail
+
+Supplementary Figure S4 downloads the WIOD 2016 release archive (`WIOTS_in_R.zip`, ~642 MB) at runtime into `scratch/supp_fig_4/`. It is not stored in this repository.
+
+The following files are retained for provenance but are not read by any current notebook:
+
 - `data/yeast/gi_score_sampled.tsv`: sampled yeast GI score matrix (1142 x 1142)
-- `data/yeast/yeast_essential_orfs.txt`: essential ORF labels used for row annotations
-- `data/interdisciplinary/WorldWideDishes_2024_June.xlsx`: interdisciplinary recipe dataset used in Supplementary Figure S2
+- `data/interdisciplinary/WorldWideDishes_2024_June.xlsx`: interdisciplinary recipe dataset
 
 ## Installation
 
@@ -79,7 +88,7 @@ source himalayas-env/bin/activate
 
 ```bash
 python -m pip install --upgrade pip
-pip install "himalayas==0.0.15" jupyter numpy pandas scipy matplotlib openpyxl
+pip install "himalayas==0.0.15" jupyter numpy pandas scipy matplotlib pyreadr
 ```
 
 ### Step 4: Launch Jupyter
@@ -88,26 +97,44 @@ pip install "himalayas==0.0.15" jupyter numpy pandas scipy matplotlib openpyxl
 jupyter notebook
 ```
 
-Open the notebook you want to run (`fig_1.ipynb`, `supp_fig_1.ipynb`, or `supp_fig_2.ipynb`).
+Open the notebook you want to run (`fig_1.ipynb`, `fig_2.ipynb`, or `supp_fig_1.ipynb` through `supp_fig_4.ipynb`).
 
 ## Figure Reproduction Guide
 
 ### Figure 1 (`fig_1.ipynb`)
 
-- Input: yeast GI profile similarity matrix + GO BP annotations
-- Analysis: hierarchical clustering (`ward`/`euclidean`), enrichment, Benjamini-Hochberg correction
+- Input: yeast genetic interaction profile similarity matrix + GO BP annotations
+- Analysis: workflow schematic plus hierarchical clustering (`ward`/`euclidean`, `linkage_threshold=16`, `min_cluster_size=30`), enrichment, global Benjamini-Hochberg correction, and cluster 3 zoom
+- Significance filter: `qval <= 0.05`
+
+### Figure 2 (`fig_2.ipynb`)
+
+- Input: yeast genetic interaction profile similarity matrix + GO BP annotations
+- Analysis: dendrogram distance-threshold and minimum-cluster-size sweeps, plus same-size random clusters with annotations fixed and annotation-label permutations with clusters fixed
 - Significance filter: `qval <= 0.05`
 
 ### Supplementary Figure S1 (`supp_fig_1.ipynb`)
 
-- Input: yeast GI score matrix + GO BP annotations + essential ORF labels
-- Analysis: depth-dependent clustered enrichment with supplementary zoom views
+- Input: yeast genetic interaction profile similarity matrix + GO BP annotations + essential ORF labels + single-mutant fitness
+- Analysis: the Figure 1 reference clustering and cluster 3 zoom, rendered as annotated matrix and condensed hierarchy views with post hoc row data tracks for essentiality and log2 fitness
 - Significance filter: `qval <= 0.05`
 
 ### Supplementary Figure S2 (`supp_fig_2.ipynb`)
 
-- Input: world recipe matrix derived from `WorldWideDishes_2024_June.xlsx`
-- Analysis: token-cleaned ingredient matrix + country-level enrichment mapping
+- Input: yeast genetic interaction profile similarity matrix + GO BP annotations
+- Analysis: matrix perturbation with symmetric zero-mean Gaussian noise, reclustering, enrichment testing, and headline GO BP annotation recovery summaries
+- Significance filter: `qval <= 0.05`
+
+### Supplementary Figure S3 (`supp_fig_3.ipynb`)
+
+- Input: curated capability table (no external dataset)
+- Analysis: qualitative capability comparison against related tools and workflows; no competing tool is installed, run, timed, or scored
+- Significance filter: not applicable
+
+### Supplementary Figure S4 (`supp_fig_4.ipynb`)
+
+- Input: WIOD 2016 release, 2014 country-sector input-output table (downloaded at runtime)
+- Analysis: log1p-scaled intermediate-flow matrix, clustered with `linkage_threshold="auto"` and `min_cluster_size=20`, annotated with native WIOD country metadata
 - Significance filter: `qval <= 0.05`
 
 ## Citation
@@ -116,7 +143,7 @@ Open the notebook you want to run (`fig_1.ipynb`, `supp_fig_1.ipynb`, or `supp_f
 
 Horecka, I., and Röst, H. (2026)
 <br>
-_HiMaLAYAS: enrichment-based annotation of hierarchically clustered matrices_
+_HiMaLAYAS: enrichment-based annotation and visualization of hierarchically clustered matrices_
 <br>
 _bioRxiv_. [https://www.biorxiv.org/content/10.64898/2026.02.11.705303v2](https://www.biorxiv.org/content/10.64898/2026.02.11.705303v2)
 <br>
