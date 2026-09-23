@@ -39,7 +39,7 @@ data and figure exports.
 - `fig_1.ipynb`: Figure 1 - HiMaLAYAS workflow and yeast genetic interaction profile similarity matrix application (`data/yeast/gi_pcc_sampled.tsv`)
 - `fig_2.ipynb`: Figure 2 - robustness and null analysis of GO Biological Process annotations in the yeast genetic interaction profile similarity matrix (`data/yeast/gi_pcc_sampled.tsv`)
 - `supp_fig_1.ipynb`: Supplementary Figure S1 - annotated matrix and condensed hierarchy views of the full yeast matrix and cluster 3 zoom, with post hoc row data tracks for essentiality and single-mutant fitness (`data/yeast/gi_pcc_sampled.tsv`)
-- `supp_fig_2.ipynb`: Supplementary Figure S2 - matrix-perturbation robustness of seven headline GO Biological Process annotations in the yeast genetic interaction profile similarity matrix (`data/yeast/gi_pcc_sampled.tsv`)
+- `supp_fig_2.ipynb`: Supplementary Figure S2 - matrix-perturbation robustness of the seven headline Gene Ontology Biological Process annotations from the Fig. 1B parent-level reference analysis (`data/yeast/gi_pcc_sampled.tsv`)
 - `supp_fig_3.ipynb`: Supplementary Figure S3 - related-tool capability comparison from a curated capability table; no external dataset and no competing tool is run
 - `supp_fig_4.ipynb`: Supplementary Figure S4 - WIOD non-biological country-sector input-output matrix portability example (downloaded at runtime)
 
@@ -51,11 +51,6 @@ data and figure exports.
 - `data/yeast/strain_ids_and_single_mutant_fitness.csv`: Costanzo et al. (2016) single-mutant fitness used for the Supplementary Figure S1 row rail
 
 Supplementary Figure S4 downloads the WIOD 2016 release archive (`WIOTS_in_R.zip`, ~642 MB) at runtime into `scratch/supp_fig_4/`. It is not stored in this repository.
-
-The following files are retained for provenance but are not read by any current notebook:
-
-- `data/yeast/gi_score_sampled.tsv`: sampled yeast GI score matrix (1142 x 1142)
-- `data/interdisciplinary/WorldWideDishes_2024_June.xlsx`: interdisciplinary recipe dataset
 
 ## Installation
 
@@ -122,7 +117,7 @@ Open the notebook you want to run (`fig_1.ipynb`, `fig_2.ipynb`, or `supp_fig_1.
 ### Supplementary Figure S2 (`supp_fig_2.ipynb`)
 
 - Input: yeast genetic interaction profile similarity matrix + GO BP annotations
-- Analysis: matrix perturbation with symmetric zero-mean Gaussian noise, reclustering, enrichment testing, and headline GO BP annotation recovery summaries
+- Analysis: matrix perturbation with symmetric zero-mean Gaussian noise, reclustering, enrichment testing, and recovery summaries for the seven headline GO BP annotations from the Fig. 1B parent-level reference analysis
 - Significance filter: `qval <= 0.05`
 
 ### Supplementary Figure S3 (`supp_fig_3.ipynb`)
