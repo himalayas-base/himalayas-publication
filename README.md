@@ -4,10 +4,10 @@
 [![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)](LICENSE)
 
 > [!CAUTION]
-> This repository is designed to work with `himalayas==0.0.15`. To ensure compatibility with these notebooks, please run:
+> This repository is designed to work with `himalayas==0.0.16`. To ensure compatibility with these notebooks, please run:
 >
 > ```bash
-> pip install himalayas==0.0.15
+> pip install himalayas==0.0.16
 > ```
 
 This repository contains publication datasets and workflows presented in **HiMaLAYAS: enrichment-based annotation and visualization of hierarchically clustered matrices**. HiMaLAYAS treats dendrogram-defined clusters as statistical units, tests categorical annotations for enrichment, controls multiple testing, and renders significant annotations alongside clusters.
@@ -36,19 +36,19 @@ data and figure exports.
 
 ### Notebooks
 
-- `fig_1.ipynb`: Figure 1 - HiMaLAYAS workflow and yeast genetic interaction profile similarity matrix application (`data/yeast/gi_pcc_sampled.tsv`)
-- `fig_2.ipynb`: Figure 2 - robustness and null analysis of GO Biological Process annotations in the yeast genetic interaction profile similarity matrix (`data/yeast/gi_pcc_sampled.tsv`)
-- `supp_fig_1.ipynb`: Supplementary Figure S1 - annotated matrix and condensed hierarchy views of the full yeast matrix and cluster 3 zoom, with post hoc row data tracks for essentiality and single-mutant fitness (`data/yeast/gi_pcc_sampled.tsv`)
-- `supp_fig_2.ipynb`: Supplementary Figure S2 - matrix-perturbation robustness of the seven headline Gene Ontology Biological Process annotations from the Fig. 1B parent-level reference analysis (`data/yeast/gi_pcc_sampled.tsv`)
+- `fig_1.ipynb`: Figure 1 - HiMaLAYAS workflow and yeast genetic interaction profile similarity matrix application (`data/gi_pcc_sampled.tsv`)
+- `fig_2.ipynb`: Figure 2 - robustness and null analysis of GO Biological Process annotations in the yeast genetic interaction profile similarity matrix (`data/gi_pcc_sampled.tsv`)
+- `supp_fig_1.ipynb`: Supplementary Figure S1 - annotated matrix and condensed hierarchy views of the full yeast matrix and cluster 3 zoom, with post hoc row data tracks for essentiality and single-mutant fitness (`data/gi_pcc_sampled.tsv`)
+- `supp_fig_2.ipynb`: Supplementary Figure S2 - matrix-perturbation robustness of the seven headline Gene Ontology Biological Process annotations from the Fig. 1B parent-level reference analysis (`data/gi_pcc_sampled.tsv`)
 - `supp_fig_3.ipynb`: Supplementary Figure S3 - related-tool capability comparison from a curated capability table; no external dataset and no competing tool is run
 - `supp_fig_4.ipynb`: Supplementary Figure S4 - WIOD non-biological country-sector input-output matrix portability example (downloaded at runtime)
 
 ### Data
 
-- `data/yeast/go_bp_name_to_orfs.json`: GO BP term-to-ORF mapping (1,095 terms)
-- `data/yeast/gi_pcc_sampled.tsv`: sampled yeast genetic interaction profile similarity matrix (1053 x 1053)
-- `data/yeast/yeast_essential_orfs.txt`: essential ORF labels used for the Supplementary Figure S1 row rail
-- `data/yeast/strain_ids_and_single_mutant_fitness.csv`: Costanzo et al. (2016) single-mutant fitness used for the Supplementary Figure S1 row rail
+- `data/go_bp_name_to_orfs.json`: GO BP term-to-ORF mapping (1,095 terms)
+- `data/gi_pcc_sampled.tsv`: sampled yeast genetic interaction profile similarity matrix (1053 x 1053)
+- `data/yeast_essential_orfs.txt`: essential ORF labels used for the Supplementary Figure S1 row rail
+- `data/strain_ids_and_single_mutant_fitness.csv`: Costanzo et al. (2016) single-mutant fitness used for the Supplementary Figure S1 row rail
 
 Supplementary Figure S4 downloads the WIOD 2016 release archive (`WIOTS_in_R.zip`, ~642 MB) at runtime into `scratch/supp_fig_4/`. It is not stored in this repository.
 
@@ -83,7 +83,7 @@ source himalayas-env/bin/activate
 
 ```bash
 python -m pip install --upgrade pip
-pip install "himalayas==0.0.15" jupyter numpy pandas scipy matplotlib pyreadr
+pip install "himalayas==0.0.16" jupyter numpy pandas scipy matplotlib pyreadr
 ```
 
 ### Step 4: Launch Jupyter
