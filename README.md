@@ -23,7 +23,7 @@ _bioRxiv_. [https://www.biorxiv.org/content/10.64898/2026.02.11.705303v2](https:
 <br>
 Submitted to _Bioinformatics Advances_.
 
-## Documentation and Tutorial
+## Documentation and Tutorials
 
 - **Docs:** [himalayas-base.github.io/himalayas-docs](https://himalayas-base.github.io/himalayas-docs)
 - **Tutorial Notebook Repository:** [github.com/himalayas-base/himalayas-docs](https://github.com/himalayas-base/himalayas-docs)
@@ -146,7 +146,7 @@ Submitted to _Bioinformatics Advances_.
 
 ### Software archive
 
-HiMaLAYAS software for the _bioRxiv_ preprint.
+HiMaLAYAS software archive.
 <br>
 Zenodo. [https://doi.org/10.5281/zenodo.18610373](https://doi.org/10.5281/zenodo.18610373)
 
