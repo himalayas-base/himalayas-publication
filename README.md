@@ -132,6 +132,18 @@ Open the notebook you want to run (`fig_1.ipynb`, `fig_2.ipynb`, or `supp_fig_1.
 - Analysis: log1p-scaled intermediate-flow matrix, clustered with `linkage_threshold="auto"` and `min_cluster_size=20`, annotated with native WIOD country metadata
 - Significance filter: `qval <= 0.05`
 
+## GO Category Comparison Table
+
+`go_categories_table.py` reproduces the accepted basic tutorial's BP/CC/MF comparison on the same seven yeast clusters, with separate global BH correction in each category. It uses the existing matrix and BP mapping plus the [bundled CC/MF inputs and preparation record](data/go_categories/README.md).
+
+Run from this repository with the publication dependency `himalayas==0.0.16`:
+
+```bash
+python go_categories_table.py
+```
+
+The workflow was verified on the PyPI 0.0.16 release with Python 3.8.12, NumPy 1.20.1, pandas 1.4.1, SciPy 1.10.1 and Matplotlib 3.4.3. Outputs are the [readable HTML table](tables/go_categories/go_categories.html), [long-form TSV](tables/go_categories/go_categories.tsv) and [run metadata](tables/go_categories/metadata.json). The TSV retains all 21 cluster/category entries, full term names, cluster size, k/K/n/N and full-precision p/q values; `NA` marks unavailable term statistics if no significant term is present. Metadata records parameters, input/output checksums, cluster memberships and the actual package path, source hashes and versions. The existing figure notebooks and their installation instructions are unchanged.
+
 ## Citation
 
 ### Primary citation
